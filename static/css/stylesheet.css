@@ -1,0 +1,147 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height:  100%;
+    width: 100%;
+}
+
+body {
+    position: fixed;/* 変更した */
+    top: 0;/* 変更した */
+    height: 100vh;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 30px 30px 30px 30px;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 187, 0, 0.534);
+    box-shadow: #333333 3px 3px 5px ;
+}
+
+.btn:active {
+    display: inline-block;
+    border-radius: 30px 30px 30px 30px;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(172, 131, 19, 0.5);
+    box-shadow: #333333 .5px .5px 5px ;
+    transition: all .1s 0s ease;
+}
+
+.bolt {
+    display: block;
+    width: 30px;
+    height: auto;
+    margin: 10px 15px 10px 15px;
+}
+
+.menu {
+    display: none;
+}
+
+.content {
+    position: relative;
+}
+
+form {
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+input {
+    width: 250px;
+    height: 60px;
+    font-size: 20px;/* 変更した */
+    margin-bottom: 10px;
+    background-color: #ddd;
+}
+
+button {
+    height: 30px;/* 変更した */
+    width: 50px;/* 変更した */
+    padding: 3px 5px 3px 5px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.top {
+    width: 100%;
+    height: 6vh;/* 変更した */
+    background-color: firebrick;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.box {
+    width: 90%;
+    height: 40vh;/* 変更した */
+    background: linear-gradient(darkred 0% 1%, firebrick 25% 75%, darkred 99% 100%);
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+}
+.foot {
+    width: 20vw;/* 変更した */
+    height: 36vh;/* 変更した */
+    background: linear-gradient(to right, #333333 0% 10%, #666666 35% 65%, #333333 90% 100%);
+    margin: 0 auto;
+}
+
+.post {
+    width: 100%;
+    height: 100%;
+    margin-top: 18vh;/* 変更した */
+    position: relative;
+    z-index: -1;
+}
+
+.mark {
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    position: absolute;
+    top: 190px;
+    left: 0;
+    right: 0;
+    bottom: auto;
+}
+
+.first-line {
+    background-color: white;
+    width: 100%;
+    height: 6px;
+    margin-bottom: 3px;
+}
+
+.second-line {
+    background-color: white;
+    width: 100%;
+    height: 6px;
+}
+
+.vertical-line {
+    background-color: white;
+    width: 8px;
+    height: 15px;
+    margin: 0 auto;
+}

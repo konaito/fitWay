@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"> 
+    <meta name="apple-mobile-web-app-title" content="NOKHIK-dic">
+    <link rel="stylesheet" href="../static/css/got.css">
+    <style>
+        .red{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn"><img src="../static/img/bolt-solid.svg" class="bolt"></div>
+    <main></main>
+    <footer></footer>
+    <script>
+        $(()=>{
+            const highlight=(words_list,text,address)=>{
+                $("main").append(`<p><span class="text"></span></p>`)
+                const figures=text.split("")
+                var t=0
+                var a=1
+                var b=0
+                figures.forEach((i)=>{
+                    if(address.includes(t)){
+                        a*=-1
+                        if(a==1){
+                            $(".text").append(i)
+                        }else{
+                            $(".text").append(`<span class="red ${words_list[b]}">${i}</span>`)
+                        }
+                        if(a==1){
+                            b++
+                        }
+                    }else{
+                        if(a==1){
+                            $(".text").append(i)
+                        }else{
+                            $(".text").append(`<span class="red ${words_list[b]}">${i}</span>`)
+                        }
+                    }
+                    t++
+                })
+            }
+            var words_list=[]
+            {% for i in words %}
+                words_list.push("{{i}}")
+            {% endfor %}
+            var text=`{{text}}`
+            var address={{address}}
+            highlight(words_list,text,address);
+            var means=[]
+            {% for mean in means %}
+                means.push("{{mean}}")
+            {% endfor %}
+            var c=0
+            words_list.forEach((i)=>{
+                $(`footer`).append(`<p class="mean" id="${i}">${i}•••${means[c]}</p>`)
+                $(`.${i}`).click(()=>{
+                    $(`#${i}`).fadeToggle()
+                    if($(`.${i}`).css("color")=="rgb(255, 0, 0)"){
+                        $(`.${i}`).css("color","orange")
+                    }else{
+                        $(`.${i}`).css("color","red")
+                    }
+                })
+                c++
+            })
+            $(".mean").hide()
+        })
+    </script>
+</body>
+</html>
